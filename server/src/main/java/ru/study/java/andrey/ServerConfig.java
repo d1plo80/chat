@@ -17,7 +17,7 @@ public class ServerConfig {
 
     private void portSetup() {
         try {
-            InputStream resourceAsStream = Server.class.getClassLoader().getResourceAsStream("config.properties");
+            InputStream resourceAsStream = Server.class.getClassLoader().getResourceAsStream("\\config.properties");
             Properties properties = new Properties();
             properties.load(resourceAsStream);
             String text = properties.getProperty("serverPort");

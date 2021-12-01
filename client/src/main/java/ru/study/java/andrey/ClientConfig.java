@@ -5,8 +5,8 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class ClientConfig {
-    private int port;
-    private String serverIP;
+    private static int port;
+    private static String serverIP;
 
     public ClientConfig() {
         clientSetup();
@@ -20,9 +20,9 @@ public class ClientConfig {
         return serverIP;
     }
 
-    private void clientSetup() {
+    private static void clientSetup() {
         try {
-            InputStream resourceAsStream = Client.class.getClassLoader().getResourceAsStream("config.properties");
+            InputStream resourceAsStream = Client.class.getClassLoader().getResourceAsStream("\\config.properties");
             Properties properties = new Properties();
             properties.load(resourceAsStream);
             String text = properties.getProperty("clientPort");
